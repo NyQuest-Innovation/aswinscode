@@ -1,0 +1,31 @@
+idf_component_register(
+    SRCS 
+        "esp32s2_24lc512.c"
+        "esp32s2_adc.c"
+        "esp32s2_algorithm.c"
+        "esp32s2_buff_operations.c"
+        "esp32s2_data_log.c"
+        "esp32s2_gpio.c"
+        "esp32s2_https_protocol.c"
+        "esp32s2_i2c_protocol.c"
+        "esp32s2_pac1720.c"
+        "esp32s2_pac1952.c"
+        "esp32s2_socket.c"
+        "esp32s2_button.c"
+        "esp32s2_wifi.c"
+        "esp32s2_ina226.c"
+        "esp32s2_buzzer.c"
+        "esp32s2_parse_data.c"
+        "esp32s2_tasks.c"
+    INCLUDE_DIRS 
+        "inc"
+    REQUIRES
+        nvs_flash
+        json
+        esp_http_client
+        esp_https_ota
+        protocol_examples_common
+    PRIV_REQUIRES 
+)
+
+spiffs_create_partition_image(storage ../spiffs_dir FLASH_IN_PROJECT)

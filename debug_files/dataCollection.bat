@@ -1,0 +1,1 @@
+python27 debug_esp32.py
